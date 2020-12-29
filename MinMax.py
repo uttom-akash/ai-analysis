@@ -1,5 +1,5 @@
 import math 
-
+from random import randint
 
 class MinMax:
   def __init__(self,state):
@@ -8,20 +8,22 @@ class MinMax:
   def run(self,bot=1,player=0):   
     self.bot=bot
     self.player=player
-    mxScore=-1000
-    bestMove={}
+    bestMoves=[]
     for row in range(3):
       for col in range(3):
          if self.gameState.boardState[row][col]==-1:
             self.gameState.boardState[row][col]=self.bot
-            score=max(mxScore,self.minmax(1,False,-10000,10000))
+            score=self.minmax(1,False,-10000,10000)
             self.gameState.boardState[row][col]=-1
+            bestMoves.append((score,{'row':row,'col':col}))
 
-            if score > mxScore:
-              mxScore=score
-              bestMove={'row':row,'col':col}
-    return bestMove
-    
+    bestMoves.sort(key=lambda move: move[0])
+    if self.gameState.level==0:           # Easy
+      nMoves=len(bestMoves)
+      index=randint(1,min(nMoves,2))
+      return bestMoves[-index][1]
+    else :                                # Hard
+      return bestMoves[-1][1]
 
   def minmax(self,depth,maximizer,alpha,beta):
     score=self.evaluate()

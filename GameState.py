@@ -1,3 +1,5 @@
+import tkinter as tk
+
 class GameState:
     def __init__(self):
         self.reset()
@@ -5,12 +7,16 @@ class GameState:
     def reset(self):
         self.player=0
         self.boardState=[[-1 for j in range(3)] for i in range(3)]
+        self.level=0 # 0=easy, 1=hard
 
+    def setLevel(self,level):
+        self.level=level
+        
     def togglePlayer(self):
         self.player=(self.player+1)%2
 
-    def setBoardState(self,r,c):
-        self.boardState[r][c]=self.player
+    def setBoardState(self,player,r,c):
+        self.boardState[r][c]=player
 
     def check(self):
         for i in range(3):
