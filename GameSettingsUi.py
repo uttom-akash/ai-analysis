@@ -24,7 +24,7 @@ class GameSettingsUi(UI):
         Radiobutton(master=frame,text='Hard',padx = 20,variable=level,value=1,command=lambda : self.settings.setLevel(level.get())).pack(anchor=W)
 
         # initial player
-        Label(frame,text="""Select player to play first""",padx = 20,pady=5,font=('arial',10,'bold')).pack()
+        Label(frame,text="""Who will take 1st turn""",padx = 20,pady=5,font=('arial',10,'bold')).pack()
         player=IntVar()
         player.set(self.settings.initialPlayer)
         Radiobutton(master=frame,text='You',padx = 20,variable=player,value=0,command=lambda : self.settings.setPlayer(player.get())).pack(anchor=W)

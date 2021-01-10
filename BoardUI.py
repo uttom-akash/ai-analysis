@@ -91,7 +91,7 @@ class BoardUI(UI):
             self.navigate(Path.settings)
         elif self.gameData.isVacant()==False: # if draw
             message="Tied!!"+"The match ended in a draw\n"+message
-            userResponse= self.showDialog(title='Tic tac toe' ,message="Tied!!"+"The match ended in a draw")
+            userResponse= self.showDialog(title='Tic tac toe' ,message=message)
             self.navigate(Path.settings)
         elif self.gameData.player==1: # if player one(comp)'s turn
             self.takeBotTurn()
