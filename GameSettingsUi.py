@@ -32,6 +32,7 @@ class GameSettingsUi(UI):
 
         # Ok
         Button(master=frame,padx=20,width=3,text='Save',command=lambda :self.submit(self.settings)).pack()
+        Button(master=frame,padx=20,width=3,text='Exit',command=lambda :exit()).pack()
     
     def cleanup(self):
         self.frame.destroy()

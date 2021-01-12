@@ -82,7 +82,7 @@ class BoardUI(UI):
         message="Do you want to play again?"
         userResponse=True
         if gameStatus['player']!=-1: # if anyone win 
-            self.drawWinningBoard(gameStatus['moves'])
+            self.drawWinningBoard(gameStatus['moves'],gameStatus['player'])
             if gameStatus['player']==0:
                 message="Congrats!!"+"'"+self.player[0]+"' have won the game!\n"+message
             else :
@@ -99,12 +99,17 @@ class BoardUI(UI):
         if userResponse==False:
             exit()
 
-    def drawWinningBoard(self,winCels=[]):
+    def drawWinningBoard(self,winCels=[],winningPlayer=0):
         self.infoFrame.destroy()
+        if winningPlayer==0:
+            bgCol= 'green'
+        else :
+            bgCol= 'red'
+
         for i in range(3):
             row=winCels[i][0]
             col=winCels[i][1]
-            self.board[row][col].config(bg="red")
+            self.board[row][col].config(bg=bgCol)
 
     def showDialog(self,title='Game Result',message=''):
         resp=messagebox.askyesno(title=title, message=message)
