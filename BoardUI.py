@@ -102,7 +102,7 @@ class BoardUI(UI):
     def drawWinningBoard(self,winCels=[],winningPlayer=0):
         self.infoFrame.destroy()
         if winningPlayer==0:
-            bgCol= 'green'
+            bgCol= 'black'
         else :
             bgCol= 'red'
 
