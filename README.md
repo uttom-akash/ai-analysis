@@ -13,7 +13,8 @@ Its a simple Tic Tac Toe game using **Minmax algorithm** and **Tkinter python li
 
 
 
-#### Opening .ipynb in google colab
+### Opening .ipynb file from github in google colab
+
 1. open ```google colab -> File -> open notebook -> github -> url=https://github.com/i-akash/Ai-assignment -> click search -> select *.ipynb```
 
 #### Assignment 2
