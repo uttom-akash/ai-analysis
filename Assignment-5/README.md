@@ -12,8 +12,7 @@ To evaluate my system, I used **python-language-tool** to check whether the syst
 
 ###### Instruction
 
-1. go to ```Assignment-5``` folder
-2. open  ```TextSuggestionSystem.ipynb``` in notebook (google colab, jupyter notebook) 
+1. open  ```TextSuggestionSystem.ipynb``` in notebook (google colab, jupyter notebook) 
 
 ###### Limitations
 
